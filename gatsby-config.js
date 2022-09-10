@@ -52,6 +52,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
@@ -120,5 +121,5 @@ module.exports = {
         icon: `src/images/drawn-me.jpg`, // This path is relative to the root of the site.
       },
     },
-  ], [`gatsby-plugin-netlify`]
+  ],
 }
