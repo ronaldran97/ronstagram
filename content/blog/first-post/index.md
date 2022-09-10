@@ -1,7 +1,7 @@
 ---
 title: The Birth of my Blog!
 date: "2022-09-09T23:46:37.121Z"
-description: Hello and welcome
+description: Welcome to the world!
 ---
 
 Hello world!
