@@ -4,26 +4,36 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 exports.__esModule = true;
 var _exportNames = {
-  graphql: true,
-  StaticQueryContext: true,
-  StaticQuery: true,
-  useStaticQuery: true,
-  prefetchPathname: true,
+  PageRenderer: true,
   Link: true,
+  useScrollRestoration: true,
   withPrefix: true,
   withAssetPrefix: true,
   navigate: true,
   parsePath: true,
-  useScrollRestoration: true,
-  PageRenderer: true
+  graphql: true,
+  StaticQueryContext: true,
+  StaticQuery: true,
+  useStaticQuery: true,
+  prefetchPathname: true
 };
-exports.StaticQueryContext = exports.StaticQuery = void 0;
+exports.StaticQueryContext = exports.StaticQuery = exports.PageRenderer = exports.Link = void 0;
 exports.graphql = graphql;
-exports.useStaticQuery = exports.prefetchPathname = void 0;
+exports.withPrefix = exports.withAssetPrefix = exports.useStaticQuery = exports.useScrollRestoration = exports.prefetchPathname = exports.parsePath = exports.navigate = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _loader = _interopRequireDefault(require("./loader"));
+
+var _publicPageRenderer = _interopRequireDefault(require("./public-page-renderer"));
+
+exports.PageRenderer = _publicPageRenderer.default;
+
+var _gatsbyReactRouterScroll = require("gatsby-react-router-scroll");
+
+exports.useScrollRestoration = _gatsbyReactRouterScroll.useScrollRestoration;
 
 var _gatsbyLink = _interopRequireWildcard(require("gatsby-link"));
 
@@ -32,16 +42,6 @@ exports.withPrefix = _gatsbyLink.withPrefix;
 exports.withAssetPrefix = _gatsbyLink.withAssetPrefix;
 exports.navigate = _gatsbyLink.navigate;
 exports.parsePath = _gatsbyLink.parsePath;
-
-var _gatsbyReactRouterScroll = require("gatsby-react-router-scroll");
-
-exports.useScrollRestoration = _gatsbyReactRouterScroll.useScrollRestoration;
-
-var _publicPageRenderer = _interopRequireDefault(require("./public-page-renderer"));
-
-exports.PageRenderer = _publicPageRenderer.default;
-
-var _loader = _interopRequireDefault(require("./loader"));
 
 var _gatsbyScript = require("gatsby-script");
 
