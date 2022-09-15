@@ -340,7 +340,7 @@ async function staticPage({
             },
 
             onError(error) {
-              throw error;
+              writableStream.destroy(error);
             }
 
           });

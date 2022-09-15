@@ -582,12 +582,16 @@ const createComponentUrls = componentChunkName => (window.___chunkMapping[compon
 
 class ProdLoader extends BaseLoader {
   constructor(asyncRequires, matchPaths, pageData) {
-    const loadComponent = chunkName => {
-      if (!asyncRequires.components[chunkName]) {
-        throw new Error(`We couldn't find the correct component chunk with the name ${chunkName}`);
+    const loadComponent = (chunkName, exportType = `components`) => {
+      if (!global.hasPartialHydration) {
+        exportType = `components`;
       }
 
-      return asyncRequires.components[chunkName]() // loader will handle the case when component is error
+      if (!asyncRequires[exportType][chunkName]) {
+        throw new Error(`We couldn't find the correct component chunk with the name "${chunkName}"`);
+      }
+
+      return asyncRequires[exportType][chunkName]() // loader will handle the case when component is error
       .catch(err => err);
     };
 
